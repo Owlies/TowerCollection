@@ -16,8 +16,8 @@ $(BUILD_PATH) :
 
 all: $(BUILD_PATH)/physic.so
 
-$(BUILD_PATH)/physic.so : $(LUA_INTERFACE_PATH)/physic.c | $(BUILD_PATH)
-	$(CC) $(CFLAGS) $(SHARED) $(OWLIES_LIBS) -o $@ $(LUA_INTERFACE_PATH)/physic.c
+$(BUILD_PATH)/physic.so : $(LUA_INTERFACE_PATH)/lua_physic.c | $(BUILD_PATH)
+	$(CC) $(CFLAGS) $(SHARED) $(OWLIES_LIBS) -o $@ $^
 
 clean:
 	rm -f $(BUILD_PATH)/*.so
