@@ -1,0 +1,11 @@
+.gitignore
+*.a
+*.o
+*.so
+Server/Lib
+*.exe
+*.dll
+*.lib
+skynet
+Server/3rd/skynet/3d/lua/luac
+Server/3rd/skynet/skynet
