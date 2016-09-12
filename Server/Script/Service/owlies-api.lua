@@ -1,13 +1,13 @@
 local skynet = require "skynet"
 require "skynet.manager"
 local physic = require "physic"
---local protobufLoader = require "owlies.protobufLoader"
+local protobufLoader = require "protobufLoader"
 --local max_client = 64
 
 skynet.start(function()
 	print("game start")
 	physic.testprint("a")
-    --protobufLoader.testFunction();
+	protobufLoader.testFunction()
    -- local watchdog = skynet.newservice("owlies-lua-watchdog")
 --	skynet.call(watchdog, "lua", "start", {
 --		port = 8888,
