@@ -14,7 +14,11 @@ CFLAGS = -g -O2 -Wall -I$(LUA_INC) -I$(LUALIB_INC) -I$(SKYNET_INC)
 $(BUILD_PATH) :
 	mkdir $(BUILD_PATH)
 
-all: $(BUILD_PATH)/physic.so
+all: skynet $(BUILD_PATH)/physic.so 
+
+skynet : 
+	cd $(SKYNET_PATH) && make linux
+	cp -rp $(SKYNET_PATH)/skynet skynet
 
 $(BUILD_PATH)/physic.so : $(LUA_INTERFACE_PATH)/lua_physic.c | $(BUILD_PATH)
 	$(CC) $(CFLAGS) $(SHARED) $(OWLIES_LIBS) -o $@ $^
